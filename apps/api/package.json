@@ -5,17 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "bun --hot src/index.ts",
-    "fix": "bun run format && bun run lint:fix",
     "start": "bun src/index.ts",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "test": "bunx vitest run"
+    "test": "bun test"
   },
   "dependencies": {
     "@elysiajs/cors": "latest",
     "elysia": "latest",
     "pino": "latest"
   },
-  "devDependencies": {
-    "vitest": "latest"
-  }
+  "devDependencies": {}
 }

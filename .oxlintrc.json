@@ -79,7 +79,8 @@
     "vitest/no-focused-tests": "error",
 
     "oxc/no-async-await": "off",
-    "oxc/no-optional-chaining": "off"
+    "oxc/no-optional-chaining": "off",
+    "oxc/no-rest-spread-properties": "off"
   },
   "overrides": [
     {
