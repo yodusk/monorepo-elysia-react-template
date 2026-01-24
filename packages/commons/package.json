@@ -1,0 +1,19 @@
+{
+  "name": "@repo/commons",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "scripts": {
+    "fix": "bun run format && bun run lint:fix",
+    "format": "bunx oxfmt -c ../../.oxfmtrc.json .",
+    "format:check": "bunx oxfmt -c ../../.oxfmtrc.json --check .",
+    "lint": "bunx oxlint -c ../../.oxlintrc.json --tsconfig ../../tsconfig.base.json .",
+    "lint:fix": "bunx oxlint -c ../../.oxlintrc.json --tsconfig ../../tsconfig.base.json --fix .",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@elysiajs/eden": "latest"
+  }
+}

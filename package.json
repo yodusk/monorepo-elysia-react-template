@@ -1,0 +1,25 @@
+{
+  "name": "monorepo-elysia-react-template",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:web": "bun --cwd apps/web dev",
+    "dev:api": "bun --cwd apps/api dev",
+    "format": "bunx oxfmt .",
+    "format:check": "bunx oxfmt --check .",
+    "lint": "bunx oxlint --tsconfig tsconfig.base.json .",
+    "lint:fix": "bunx oxlint --fix --tsconfig tsconfig.base.json .",
+    "lint:fix:suggestions": "bunx oxlint --fix --fix-suggestions --tsconfig tsconfig.base.json .",
+    "typecheck": "bun --cwd packages/commons typecheck && bun --cwd apps/api typecheck && bun --cwd apps/web typecheck",
+    "test": "bun --cwd apps/api test"
+  },
+  "devDependencies": {
+    "bun-types": "latest",
+    "oxfmt": "latest",
+    "oxlint": "latest",
+    "typescript": "latest"
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "categories": {
+    "correctness": "error",
+    "suspicious": "error",
+    "perf": "warn",
+    "pedantic": "off",
+    "style": "off",
+    "restriction": "warn",
+    "nursery": "warn"
+  },
+  "plugins": ["oxc", "typescript", "react", "node", "vitest", "import"],
+  "env": {
+    "es6": true
+  },
+  "settings": {
+    "vitest": {
+      "typecheck": true
+    }
+  },
+  "globals": {
+    "Bun": "readonly"
+  },
+  "rules": {
+    "no-console": "warn",
+    "no-magic-numbers": "error",
+    "sort-imports": "off",
+    "no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "ignoreRestSiblings": true
+      }
+    ],
+
+    "typescript/no-explicit-any": "error",
+    "typescript/no-unsafe-assignment": "error",
+    "typescript/no-unsafe-call": "error",
+    "typescript/no-unsafe-member-access": "error",
+    "typescript/no-unsafe-return": "error",
+    "typescript/no-non-null-assertion": "error",
+    "typescript/no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_"
+      }
+    ],
+    "typescript/consistent-type-imports": "error",
+    "typescript/no-unnecessary-condition": "warn",
+    "typescript/prefer-nullish-coalescing": "warn",
+    "typescript/prefer-optional-chain": "warn",
+    "typescript/no-floating-promises": "error",
+    "typescript/no-misused-promises": "error",
+    "typescript/await-thenable": "error",
+    "typescript/require-await": "warn",
+    "typescript/explicit-module-boundary-types": "off",
+    "explicit-function-return-type": "off",
+
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-filename-extension": [
+      "error",
+      {
+        "extensions": [".jsx", ".tsx"]
+      }
+    ],
+    "react/no-array-index-key": "warn",
+
+    "import/no-cycle": "error",
+    "import/no-self-import": "error",
+    "import/no-duplicates": "error",
+
+    "node/no-missing-import": "off",
+    "node/no-unsupported-features": "warn",
+
+    "vitest/no-conditional-tests": "error",
+    "vitest/no-identical-title": "error",
+    "vitest/no-focused-tests": "error",
+
+    "oxc/no-async-await": "off",
+    "oxc/no-optional-chaining": "off"
+  },
+  "overrides": [
+    {
+      "files": ["apps/web/**/*.{js,jsx,ts,tsx}"],
+      "env": {
+        "browser": true
+      }
+    },
+    {
+      "files": ["apps/api/**/*.{js,ts}", "packages/**/*.{js,ts}"],
+      "env": {
+        "node": true
+      },
+      "rules": {
+        "no-console": "error",
+        "node/no-process-env": "warn"
+      }
+    },
+    {
+      "files": ["**/*.{test,spec}.{js,jsx,ts,tsx}"],
+      "env": {
+        "node": true
+      },
+      "rules": {
+        "no-magic-numbers": "off",
+        "typescript/no-explicit-any": "warn"
+      }
+    }
+  ]
+}
