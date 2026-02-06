@@ -1,4 +1,4 @@
-import type { App } from '@repo/api'
+import type { App } from '@apps/api'
 import { treaty } from '@elysiajs/eden'
 
 export const createApiClient = (baseUrl: string) => treaty<App>(baseUrl)

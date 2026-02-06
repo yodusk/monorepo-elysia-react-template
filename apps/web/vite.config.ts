@@ -10,7 +10,7 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@repo/commons': path.resolve(__dirname, '../../packages/commons/src'),
+      '@commons': path.resolve(__dirname, '../../packages/commons/src'),
     },
   },
 })

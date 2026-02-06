@@ -15,8 +15,8 @@
     "noUncheckedIndexedAccess": true,
     "baseUrl": ".",
     "paths": {
-      "@repo/api": ["apps/api/src/app.ts"],
-      "@repo/commons": ["packages/commons/src/index.ts"]
+      "@apps/api": ["apps/api/src/app.ts"],
+      "@commons": ["packages/commons/src/index.ts"]
     }
   }
 }

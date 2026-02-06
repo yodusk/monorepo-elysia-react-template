@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { createApiClient } from '@repo/commons'
+import { createApiClient } from '@commons'
 import { logger } from './logger'
 
 // oxlint-disable-next-line import/no-default-export
