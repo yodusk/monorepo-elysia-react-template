@@ -22,7 +22,7 @@
     "Bun": "readonly"
   },
   "rules": {
-    "no-console": "warn",
+    "no-console": "error",
     "no-magic-numbers": "error",
     "sort-imports": "off",
     "no-unused-vars": [
@@ -87,6 +87,9 @@
       "files": ["apps/web/**/*.{js,jsx,ts,tsx}"],
       "env": {
         "browser": true
+      },
+      "rules": {
+        "no-console": "error"
       }
     },
     {

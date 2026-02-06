@@ -9,9 +9,26 @@ export type RequestContext = {
 
 export const requestContext = new AsyncLocalStorage<RequestContext>()
 
-const baseLogger = pino({
-  level: Bun.env.NODE_ENV === 'test' ? 'silent' : (Bun.env.LOG_LEVEL ?? 'info'),
-})
+const isDev = Bun.env.NODE_ENV === 'development'
+const isTest = Bun.env.NODE_ENV === 'test'
+
+const baseLogger = isDev
+  ? pino(
+      {
+        level: isTest ? 'silent' : (Bun.env.LOG_LEVEL ?? 'info'),
+      },
+      pino.transport({
+        target: 'pino-pretty',
+        options: {
+          colorize: true,
+          translateTime: 'HH:MM:ss',
+          ignore: 'pid,hostname',
+        },
+      }),
+    )
+  : pino({
+      level: isTest ? 'silent' : (Bun.env.LOG_LEVEL ?? 'info'),
+    })
 
 export const logger = baseLogger
 

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { createApiClient } from '@repo/commons'
+import { logger } from './logger'
 
 // oxlint-disable-next-line import/no-default-export
 export default function App() {
@@ -12,6 +13,7 @@ export default function App() {
       const { data, error } = await api.hello.get()
 
       if (error) {
+        logger.error({ error }, 'Failed to fetch message from API')
         setError(JSON.stringify(error))
         return
       }
@@ -19,7 +21,10 @@ export default function App() {
       setMessage(data?.message ?? '')
     }
 
-    run().catch((e) => setError(String(e)))
+    run().catch((e) => {
+      logger.error({ err: e }, 'Unexpected error in App')
+      setError(String(e))
+    })
   }, [])
 
   return (
