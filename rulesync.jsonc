@@ -1,7 +1,6 @@
 {
   "targets": [
-    "claudecode",
-    "factorydroid"
+    "claudecode"
   ],
   "features": [
     "rules",
