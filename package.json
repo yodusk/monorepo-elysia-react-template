@@ -13,9 +13,11 @@
     "lint": "bunx oxlint --tsconfig tsconfig.base.json .",
     "lint:fix": "bunx oxlint --fix --tsconfig tsconfig.base.json .",
     "lint:fix:suggestions": "bunx oxlint --fix --fix-suggestions --tsconfig tsconfig.base.json .",
-    "typecheck": "bun --cwd packages/commons typecheck && bun --cwd apps/api typecheck && bun --cwd apps/web typecheck",
+    "typecheck": "bun --cwd packages/commons typecheck && bun --cwd packages/migrations typecheck && bun --cwd apps/api typecheck && bun --cwd apps/web typecheck",
     "test": "bun --cwd apps/api test",
-    "prepare": "husky"
+    "prepare": "husky",
+    "db:migrate": "bun --env-file apps/api/.env --cwd packages/migrations run migrate",
+    "db:generate": "cd apps/api && bunx kysely-codegen"
   },
   "devDependencies": {
     "bun-types": "latest",

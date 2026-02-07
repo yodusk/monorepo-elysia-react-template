@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@apps/api": ["apps/api/src/app.ts"],
-      "@commons": ["packages/commons/src/index.ts"]
+      "@commons": ["packages/commons/src/index.ts"],
+      "@packages/migrations": ["packages/migrations/src/index.ts"]
     }
   }
 }

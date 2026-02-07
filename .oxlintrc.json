@@ -99,7 +99,7 @@
       },
       "rules": {
         "no-console": "error",
-        "node/no-process-env": "warn"
+        "node/no-process-env": "error"
       }
     },
     {
@@ -108,8 +108,15 @@
         "node": true
       },
       "rules": {
+        "no-magic-numbers": "off"
+      }
+    },
+    {
+      "files": ["packages/migrations/src/run.ts"],
+      "rules": {
+        "no-console": "off",
         "no-magic-numbers": "off",
-        "typescript/no-explicit-any": "warn"
+        "no-await-in-loop": "off"
       }
     }
   ]
