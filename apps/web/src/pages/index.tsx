@@ -1,38 +1,35 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { useEffect, useState } from 'react'
-import { createApiClient } from '@commons'
-import { logger } from '../logger'
+import { atomWithQuery } from 'jotai-tanstack-query'
+import { useAtomValue } from 'jotai'
+import { api } from '../api'
+
+const helloAtom = atomWithQuery(() => ({
+  queryKey: ['hello'],
+  queryFn: async () => {
+    const { data, error } = await api.hello.get()
+    if (error) throw error
+    return data
+  },
+}))
 
 function HomePage() {
-  const [message, setMessage] = useState<string>('')
-  const [error, setError] = useState<string>('')
+  const { data, status, error } = useAtomValue(helloAtom)
 
-  useEffect(() => {
-    const run = async () => {
-      const api = createApiClient(import.meta.env.VITE_API_URL ?? 'http://localhost:3000')
-      const { data, error } = await api.hello.get()
-
-      if (error) {
-        logger.error({ error }, 'Failed to fetch message from API')
-        setError(JSON.stringify(error))
-        return
-      }
-
-      setMessage(data?.message ?? '')
-    }
-
-    run().catch((e) => {
-      logger.error({ err: e }, 'Unexpected error in App')
-      setError(String(e))
-    })
-  }, [])
-
-  return (
-    <main style={{ fontFamily: 'system-ui', padding: 16 }}>
-      <h1>Web</h1>
-      {error ? <pre>{error}</pre> : <p>{message || 'Loading\u2026'}</p>}
-    </main>
-  )
+  switch (status) {
+    case 'pending':
+      return <p>Loading…</p>
+    case 'error':
+      return <pre>{String(error)}</pre>
+    case 'success':
+      return (
+        <main style={{ fontFamily: 'system-ui', padding: 16 }}>
+          <h1>Web</h1>
+          <p>{data.message}</p>
+        </main>
+      )
+    default:
+      return null
+  }
 }
 
 // oxlint-disable-next-line import/no-default-export
