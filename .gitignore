@@ -9,6 +9,9 @@ coverage/
 # vite
 .vite/
 
+# tanstack router generated route tree
+routeTree.gen.ts
+
 # env
 .env
 .env.*

@@ -1,9 +1,7 @@
 import pino from 'pino'
 
-const isDev = import.meta.env.DEV
-
 export const logger = pino({
-  level: import.meta.env.VITE_LOG_LEVEL ?? (isDev ? 'debug' : 'info'),
+  level: import.meta.env.VITE_LOG_LEVEL ?? (import.meta.env.DEV ? 'debug' : 'info'),
   browser: {
     asObject: true,
     write: {

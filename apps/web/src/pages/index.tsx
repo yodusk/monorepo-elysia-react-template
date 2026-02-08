@@ -1,9 +1,9 @@
+import { createFileRoute } from '@tanstack/react-router'
 import { useEffect, useState } from 'react'
 import { createApiClient } from '@commons'
-import { logger } from './logger'
+import { logger } from '../logger'
 
-// oxlint-disable-next-line import/no-default-export
-export default function App() {
+function HomePage() {
   const [message, setMessage] = useState<string>('')
   const [error, setError] = useState<string>('')
 
@@ -30,7 +30,10 @@ export default function App() {
   return (
     <main style={{ fontFamily: 'system-ui', padding: 16 }}>
       <h1>Web</h1>
-      {error ? <pre>{error}</pre> : <p>{message || 'Loading…'}</p>}
+      {error ? <pre>{error}</pre> : <p>{message || 'Loading\u2026'}</p>}
     </main>
   )
 }
+
+// oxlint-disable-next-line import/no-default-export
+export const Route = createFileRoute('/')({ component: HomePage })
