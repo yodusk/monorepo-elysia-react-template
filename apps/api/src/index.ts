@@ -1,6 +1,6 @@
-import { logger } from './logger'
-import { app } from './app'
-import { db } from './db'
+import { app } from 'app'
+import { db } from 'db'
+import { logger } from 'logger'
 
 export type { App } from './app'
 

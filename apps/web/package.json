@@ -12,6 +12,7 @@
   "dependencies": {
     "@chakra-ui/react": "^3.32.0",
     "@commons": "workspace:*",
+    "@elysiajs/eden": "latest",
     "@emotion/react": "^11.14.0",
     "@floating-ui/react": "^0.27.17",
     "@tanstack/react-query": "^5.90.20",
@@ -32,6 +33,7 @@
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "@vitejs/plugin-react": "latest",
+    "elysia": "latest",
     "vite": "latest"
   }
 }

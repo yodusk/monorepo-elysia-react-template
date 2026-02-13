@@ -1,9 +1,11 @@
 import { cors } from '@elysiajs/cors'
 import { Elysia } from 'elysia'
-import { logging } from './logging'
+import { errorHandler } from 'utils/middlewares/errorHandler'
+import { logging } from 'utils/middlewares/logging'
 
 export const app = new Elysia()
   .use(logging)
+  .use(errorHandler)
   .use(
     cors({
       origin: 'http://localhost:5173',

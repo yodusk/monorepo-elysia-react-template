@@ -1,6 +1,6 @@
-import { getLogger, logger, requestContext } from './logger'
 import { Elysia } from 'elysia'
 import { randomUUID } from 'node:crypto'
+import { getLogger, logger, requestContext } from 'logger'
 
 export const logging = new Elysia({ name: 'logging' })
   .onRequest(({ request, set }) => {

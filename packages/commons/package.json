@@ -13,7 +13,5 @@
     "lint:fix": "bunx oxlint -c ../../.oxlintrc.json --tsconfig ../../tsconfig.base.json --fix .",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
-  "dependencies": {
-    "@elysiajs/eden": "latest"
-  }
+  "dependencies": {}
 }

@@ -4,18 +4,7 @@
     "types": ["bun-types"],
     "lib": ["ES2022"],
     "noEmit": true,
-    "baseUrl": ".",
-    "paths": {
-      "@apps/api": ["./src/index.ts"],
-      "@commons": ["../../packages/commons/src/index.ts"],
-      "@controllers": ["./src/controllers"],
-      "@useCases": ["./src/useCases"],
-      "@repositories": ["./src/repositories"],
-      "@models": ["./src/models"],
-      "@db": ["./src/db"],
-      "@clients": ["./src/clients"],
-      "@utils": ["./src/utils"]
-    }
+    "baseUrl": "./src"
   },
   "include": ["src"]
 }

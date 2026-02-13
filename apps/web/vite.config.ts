@@ -20,11 +20,6 @@ export default defineConfig({
   resolve: {
     alias: {
       '@commons': path.resolve(__dirname, '../../packages/commons/src'),
-      '@api': path.resolve(__dirname, './src/api'),
-      '@components': path.resolve(__dirname, './src/components'),
-      '@pages': path.resolve(__dirname, './src/pages'),
-      '@data': path.resolve(__dirname, './src/data'),
-      '@utils': path.resolve(__dirname, './src/utils'),
     },
     dedupe: ['react', 'react-dom'],
   },

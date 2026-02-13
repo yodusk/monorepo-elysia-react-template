@@ -4,15 +4,17 @@
     "jsx": "react-jsx",
     "types": ["vite/client", "bun-types"],
     "noEmit": true,
-    "baseUrl": ".",
+    "baseUrl": "./src",
     "paths": {
-      "@apps/api": ["../../apps/api/src/index.ts"],
-      "@commons": ["../../packages/commons/src/index.ts"],
-      "@api": ["./src/api"],
-      "@components": ["./src/components"],
-      "@pages": ["./src/pages"],
-      "@data": ["./src/data"],
-      "@utils": ["./src/utils"]
+      "@apps/api": ["../../api/src/index.ts"],
+      "@commons": ["../../../packages/commons/src/index.ts"],
+      "app": ["../../api/src/app.ts"],
+      "db": ["../../api/src/db/index.ts"],
+      "db/*": ["../../api/src/db/*"],
+      "logger": ["../../api/src/logger.ts"],
+      "settings": ["../settings.ts"],
+      "models/*": ["../../api/src/models/*"],
+      "utils/*": ["../../api/src/utils/*"]
     }
   },
   "include": ["src", "vite.config.ts"]

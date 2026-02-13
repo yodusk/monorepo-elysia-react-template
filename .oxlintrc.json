@@ -70,6 +70,7 @@
     "import/no-cycle": "error",
     "import/no-self-import": "error",
     "import/no-duplicates": "error",
+    "import/no-relative-parent-imports": "error",
 
     "node/no-missing-import": "off",
     "node/no-unsupported-features": "warn",
