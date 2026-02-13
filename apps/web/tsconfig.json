@@ -3,7 +3,17 @@
   "compilerOptions": {
     "jsx": "react-jsx",
     "types": ["vite/client", "bun-types"],
-    "noEmit": true
+    "noEmit": true,
+    "baseUrl": ".",
+    "paths": {
+      "@apps/api": ["../../apps/api/src/index.ts"],
+      "@commons": ["../../packages/commons/src/index.ts"],
+      "@api": ["./src/api"],
+      "@components": ["./src/components"],
+      "@pages": ["./src/pages"],
+      "@data": ["./src/data"],
+      "@utils": ["./src/utils"]
+    }
   },
   "include": ["src", "vite.config.ts"]
 }

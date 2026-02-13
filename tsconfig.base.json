@@ -3,7 +3,7 @@
   "compilerOptions": {
     "target": "ES2022",
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
+    "module": "esnext",
     "moduleResolution": "Bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -15,9 +15,8 @@
     "noUncheckedIndexedAccess": true,
     "baseUrl": ".",
     "paths": {
-      "@apps/api": ["apps/api/src/app.ts"],
-      "@commons": ["packages/commons/src/index.ts"],
-      "@packages/migrations": ["packages/migrations/src/index.ts"]
+      "@apps/api": ["apps/api/src/index.ts"],
+      "@commons": ["packages/commons/src/index.ts"]
     }
   }
 }
