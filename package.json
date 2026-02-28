@@ -10,9 +10,9 @@
     "dev:api": "bun --cwd apps/api dev",
     "format": "bunx oxfmt .",
     "format:check": "bunx oxfmt --check .",
-    "lint": "bunx oxlint --tsconfig tsconfig.base.json .",
-    "lint:fix": "bunx oxlint --fix --tsconfig tsconfig.base.json .",
-    "lint:fix:suggestions": "bunx oxlint --fix --fix-suggestions --tsconfig tsconfig.base.json .",
+    "lint": "bunx oxlint --type-aware --tsconfig tsconfig.base.json .",
+    "lint:fix": "bunx oxlint --type-aware --fix --tsconfig tsconfig.base.json .",
+    "lint:fix:suggestions": "bunx oxlint --type-aware --fix --fix-suggestions --tsconfig tsconfig.base.json .",
     "typecheck": "bun --cwd packages/commons typecheck && bun --cwd packages/migrations typecheck && bun --cwd apps/api typecheck && bun --cwd apps/web typecheck",
     "test": "bun --cwd apps/api test",
     "prepare": "husky",
@@ -32,7 +32,7 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
       "bunx oxfmt",
-      "bunx oxlint --tsconfig tsconfig.base.json"
+      "bunx oxlint --type-aware --tsconfig tsconfig.base.json"
     ],
     "*.{json,md,css,html}": [
       "bunx oxfmt"

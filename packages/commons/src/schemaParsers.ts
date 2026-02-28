@@ -48,14 +48,14 @@ export function snakeCaseToCamelCase(str: string): string {
   return str.replace(/_(.)/g, (_, $1: string) => $1.toUpperCase())
 }
 
-export function parseItems<T extends z.ZodTypeAny>(
+export function parseItems<T extends z.ZodType>(
   parser: T,
   items?: Record<string, unknown>[] | null,
 ): z.output<T>[] {
   return (items ?? []).map((item) => parseItem(parser, item)).filter(isNotNull)
 }
 
-export function parseItem<T extends z.ZodTypeAny>(
+export function parseItem<T extends z.ZodType>(
   parser: T,
   item?: Record<string, unknown> | null,
   camelCase = true,
@@ -71,7 +71,7 @@ export function parseItem<T extends z.ZodTypeAny>(
   return result.data
 }
 
-export function parseItemStrict<T extends z.ZodTypeAny>(
+export function parseItemStrict<T extends z.ZodType>(
   parser: T,
   item?: Record<string, unknown> | null,
   camelCase = true,
@@ -79,13 +79,13 @@ export function parseItemStrict<T extends z.ZodTypeAny>(
   return parser.parse(item && camelCase ? camelCaseDeep(item) : item)
 }
 
-export function parseItemsStrict<T extends z.ZodTypeAny>(
+export function parseItemsStrict<T extends z.ZodType>(
   parser: T,
   items?: Record<string, unknown>[] | null,
 ): z.output<T>[] {
   return (items ?? []).map((item) => parseItemStrict(parser, item))
 }
 
-export function isEnum<T extends z.ZodTypeAny>(parser: T, item?: string | null): boolean {
+export function isEnum<T extends z.ZodType>(parser: T, item?: string | null): boolean {
   return parser.safeParse(item).success
 }

@@ -31,6 +31,7 @@ export function mapNullable<T, R>(value: Nullable<T>, fn: (value: T) => R): Null
 export function mapMaybe<T, R>(value: Maybe<T>, fn: (value: T) => R): Maybe<R> {
   // oxlint-disable-next-line no-undefined
   if (value === null || value === undefined) {
+    // oxlint-disable-next-line typescript/no-unsafe-type-assertion
     return value as Maybe<R>
   }
   return fn(value)

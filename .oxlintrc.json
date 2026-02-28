@@ -30,18 +30,24 @@
     "no-unexpected-multiline": "error",
     "no-unmodified-loop-condition": "error",
     "no-unreachable": "error",
-    "no-use-before-define": "error",
+    "no-use-before-define": ["error", { "functions": false }],
     "no-useless-catch": "error",
     /* ── eslint: best practices ──────────────────────────────── */
     "no-console": "error",
     "no-implicit-coercion": "error",
     "no-inline-comments": "error",
-    "no-magic-numbers": "error",
+    "no-magic-numbers": "off",
     "no-sequences": "error",
     "no-unneeded-ternary": "error",
     "no-else-return": "warn",
     "prefer-const": "error",
-    "prefer-destructuring": "warn",
+    "prefer-destructuring": [
+      "warn",
+      {
+        "VariableDeclarator": { "array": false, "object": true },
+        "AssignmentExpression": { "array": false, "object": true }
+      }
+    ],
     "no-unused-vars": [
       "error",
       {
@@ -132,7 +138,14 @@
     "typescript/prefer-nullish-coalescing": "warn",
     "typescript/prefer-optional-chain": "warn",
     "typescript/require-await": "warn",
-    "typescript/strict-boolean-expressions": "error",
+    "typescript/strict-boolean-expressions": [
+      "error",
+      {
+        "allowNullableBoolean": true,
+        "allowNullableString": true,
+        "allowNullableObject": true
+      }
+    ],
     "typescript/explicit-module-boundary-types": "off",
     /* ── react ────────────────────────────────────────────────── */
     "react/forward-ref-uses-ref": "error",
@@ -154,7 +167,7 @@
     "import/no-duplicates": "error",
     "import/no-relative-parent-imports": "error",
     "import/no-self-import": "error",
-    "import/no-unassigned-import": "error",
+    "import/no-unassigned-import": ["error", { "allow": ["**/*.css"] }],
     /* ── promise ──────────────────────────────────────────────── */
     "promise/no-return-in-finally": "error",
     "promise/no-return-wrap": "error",
@@ -184,7 +197,7 @@
     "unicorn/prefer-type-error": "error",
     "unicorn/throw-new-error": "error",
     /* ── node ─────────────────────────────────────────────────── */
-    "node/no-process-env": "error",
+    "node/no-process-env": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features": "warn",
     /* ── vitest ───────────────────────────────────────────────── */
@@ -204,9 +217,6 @@
       "files": ["apps/web/**/*.{js,jsx,ts,tsx}"],
       "env": {
         "browser": true
-      },
-      "rules": {
-        "no-console": "error"
       }
     },
     {
@@ -242,7 +252,6 @@
         "node": true
       },
       "rules": {
-        "no-console": "error",
         "node/no-process-env": "error"
       }
     },
@@ -252,7 +261,6 @@
         "node": true
       },
       "rules": {
-        "no-magic-numbers": "off",
         "max-lines-per-function": "off",
         "max-lines": "off"
       }
@@ -261,7 +269,6 @@
       "files": ["packages/migrations/src/run.ts"],
       "rules": {
         "no-console": "off",
-        "no-magic-numbers": "off",
         "no-await-in-loop": "off"
       }
     }

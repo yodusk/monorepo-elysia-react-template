@@ -4,7 +4,17 @@
     "types": ["bun-types"],
     "lib": ["ES2022"],
     "noEmit": true,
-    "baseUrl": "./src"
+    "paths": {
+      "@apps/api": ["./src/index.ts"],
+      "@commons": ["../../packages/commons/src/index.ts"],
+      "app": ["./src/app.ts"],
+      "db": ["./src/db/index.ts"],
+      "db/*": ["./src/db/*"],
+      "logger": ["./src/logger.ts"],
+      "settings": ["./src/settings.ts"],
+      "models/*": ["./src/models/*"],
+      "utils/*": ["./src/utils/*"]
+    }
   },
   "include": ["src"]
 }

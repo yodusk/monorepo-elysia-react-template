@@ -4,7 +4,6 @@ import { RouterProvider, createRouter } from '@tanstack/react-router'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { Provider as JotaiProvider } from 'jotai'
 import { routeTree } from './routeTree.gen'
-// oxlint-disable-next-line import/no-unassigned-import
 import './index.css'
 
 const router = createRouter({ routeTree })

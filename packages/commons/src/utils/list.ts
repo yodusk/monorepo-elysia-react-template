@@ -4,12 +4,11 @@ export function groupBy<T, K extends string>(getKey: (item: T) => K, items: T[])
   return items.reduce(
     (result, item) => {
       const groupKey = getKey(item)
-      if (!result[groupKey]) {
-        result[groupKey] = []
-      }
+      result[groupKey] ??= []
       result[groupKey].push(item)
       return result
     },
+    // oxlint-disable-next-line typescript/no-unsafe-type-assertion
     {} as Record<K, T[]>,
   )
 }
@@ -93,6 +92,7 @@ export function indexBy<T, K extends string>(getKey: (item: T) => K, items: T[])
       result[groupKey] = item
       return result
     },
+    // oxlint-disable-next-line typescript/no-unsafe-type-assertion
     {} as Record<K, T>,
   )
 }

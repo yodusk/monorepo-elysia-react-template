@@ -13,10 +13,9 @@
     "skipLibCheck": true,
     "strict": true,
     "noUncheckedIndexedAccess": true,
-    "baseUrl": ".",
     "paths": {
-      "@apps/api": ["apps/api/src/index.ts"],
-      "@commons": ["packages/commons/src/index.ts"]
+      "@apps/api": ["./apps/api/src/index.ts"],
+      "@commons": ["./packages/commons/src/index.ts"]
     }
   }
 }

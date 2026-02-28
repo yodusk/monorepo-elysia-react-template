@@ -7,7 +7,7 @@ const helloAtom = atomWithQuery(() => ({
   queryKey: ['hello'],
   queryFn: async () => {
     const { data, error } = await api.hello.get()
-    if (error) throw error
+    if (error) throw new Error(JSON.stringify(error))
     return data
   },
 }))
@@ -22,7 +22,7 @@ function HomePage() {
       return <pre>{String(error)}</pre>
     case 'success':
       return (
-        <main className="p-4 font-sans">
+        <main className='p-4 font-sans'>
           <h1>Web</h1>
           <p>{data.message}</p>
         </main>
