@@ -1,7 +1,7 @@
 import type { z } from 'zod'
 
 export function isNotNull<T>(element: T | null): element is T {
-  return element != null
+  return element !== null
 }
 
 function camelCaseDeep(obj: unknown): unknown {

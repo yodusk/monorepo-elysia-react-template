@@ -9,7 +9,7 @@
     "restriction": "warn",
     "nursery": "warn"
   },
-  "plugins": ["oxc", "typescript", "react", "node", "vitest", "import"],
+  "plugins": ["oxc", "typescript", "react", "node", "vitest", "import", "promise"],
   "env": {
     "es6": true
   },
@@ -33,13 +33,75 @@
         "ignoreRestSiblings": true
       }
     ],
-
     "typescript/no-explicit-any": "error",
+    "no-else-return": "warn",
+    "typescript/no-deprecated": "warn",
+    "react/jsx-no-duplicate-props": "error",
+    "react/jsx-key": "error",
+    "unicorn/throw-new-error": "error",
+    "react/forward-ref-uses-ref": "error",
+    "typescript/strict-boolean-expressions": "error",
+    "react/rules-of-hooks": "error",
+    "vitest/require-local-test-context-for-concurrent-snapshots": "error",
+    "unicorn/prefer-type-error": "error",
+    "unicorn/no-nested-ternary": "error",
+    "unicorn/no-invalid-fetch-options": "error",
+    "no-inner-declarations": "error",
+    "no-inline-comments": "error",
+    "typescript/no-inferrable-types": "error",
+    "no-implicit-coercion": "error",
+    "unicorn/no-immediate-mutation": "error",
+    "no-fallthrough": "error",
+    "unicorn/prefer-ternary": ["warn", "only-single-line"],
+    "eslint/prefer-template": "warn",
     "typescript/no-unsafe-assignment": "error",
+    "typescript/prefer-function-type": "warn",
+    "typescript/prefer-for-of": "warn",
+    "typescript/prefer-find": "error",
+    "typescript/prefer-enum-initializers": "error",
+    "prefer-destructuring": "warn",
+    "unicorn/prefer-default-parameters": "error",
+    "unicorn/prefer-date-now": "error",
+    "prefer-const": "error",
+    "promise/prefer-catch": "error",
     "typescript/no-unsafe-call": "error",
     "typescript/no-unsafe-member-access": "error",
     "typescript/no-unsafe-return": "error",
+    "typescript/no-unsafe-argument": "error",
+    "unicorn/no-unreadable-iife": "error",
+    "unicorn/no-unreadable-array-destructuring": "error",
+    "no-unreachable": "error",
+    "no-unneeded-ternary": "error",
+    "vitest/no-unneeded-async-expect-function": "error",
+    "typescript/no-unnecessary-type-parameters": "error",
+    "typescript/no-unnecessary-type-constraint": "error",
+    "typescript/no-unnecessary-type-assertion": "error",
+    "typescript/no-unnecessary-type-arguments": "error",
+    "unicorn/no-unnecessary-slice-end": "error",
+    "typescript/no-unnecessary-qualifier": "error",
+    "no-unmodified-loop-condition": "error",
+    "react/no-unknown-property": "error",
+    "no-unexpected-multiline": "error",
+    "import/no-unassigned-import": "error",
+    "unicorn/no-static-only-class": "error",
+    "no-shadow": "error",
+    "no-sequences": "error",
     "typescript/no-non-null-assertion": "error",
+    "no-self-compare": "error",
+    "promise/no-return-wrap": "error",
+
+    "promise/no-return-in-finally": "error",
+    "typescript/no-restricted-types": [
+      "error",
+      {
+        "name": "object",
+        "message": "Use Record<string, unknown> instead."
+      },
+      {
+        "name": "Function",
+        "message": "Use specific function types instead, like () => void."
+      }
+    ],
     "typescript/no-unsafe-type-assertion": "error",
     "typescript/no-unused-vars": [
       "error",
@@ -58,7 +120,6 @@
     "typescript/require-await": "warn",
     "typescript/explicit-module-boundary-types": "off",
     "explicit-function-return-type": "off",
-
     "react/react-in-jsx-scope": "off",
     "react/jsx-filename-extension": [
       "error",
@@ -67,28 +128,66 @@
       }
     ],
     "react/no-array-index-key": "warn",
-
     "import/no-cycle": "error",
     "import/no-self-import": "error",
     "import/no-duplicates": "error",
     "import/no-relative-parent-imports": "error",
-
     "node/no-missing-import": "off",
     "node/no-unsupported-features": "warn",
-
     "vitest/no-conditional-tests": "error",
     "vitest/no-identical-title": "error",
     "vitest/no-focused-tests": "error",
-
     "oxc/no-async-await": "off",
+    "typescript/prefer-as-const": "error",
+    "unicorn/prefer-array-index-of": "error",
+    "unicorn/prefer-array-flat-map": "error",
+    "unicorn/prefer-array-flat": "error",
+    "unicorn/prefer-array-find": "error",
+    "typescript/only-throw-error": "error",
+    "react/only-export-components": "error",
+    "typescript/non-nullable-type-assertion-style": "error",
+    "unicorn/no-useless-length-check": "error",
+    "eslint/no-useless-computed-key": "error",
+    "typescript/no-useless-default-assignment": "error",
     "oxc/no-optional-chaining": "off",
     "oxc/no-rest-spread-properties": "off",
-
-    "complexity": ["warn", { "max": 10 }],
-    "max-lines-per-function": ["warn", { "max": 80, "skipBlankLines": true, "skipComments": true }],
-    "max-depth": ["warn", { "max": 4 }],
-    "max-nested-callbacks": ["warn", { "max": 3 }],
-    "no-useless-catch": "error"
+    "typescript/no-require-imports": "error",
+    "node/no-process-env": "error",
+    "oxc/branches-sharing-code": "error",
+    "no-use-before-define": "error",
+    "complexity": [
+      "warn",
+      {
+        "max": 10
+      }
+    ],
+    "max-lines-per-function": [
+      "warn",
+      {
+        "max": 80,
+        "skipBlankLines": true,
+        "skipComments": true
+      }
+    ],
+    "max-depth": [
+      "warn",
+      {
+        "max": 4
+      }
+    ],
+    "max-nested-callbacks": [
+      "warn",
+      {
+        "max": 3
+      }
+    ],
+    "no-useless-catch": "error",
+    "unicorn/filename-case": [
+      "error",
+      {
+        "case": "camelCase"
+      }
+    ]
   },
   "overrides": [
     {
@@ -100,11 +199,33 @@
         "no-console": "error"
       }
     },
+
     {
       "files": ["apps/web/**/*.{jsx,tsx}"],
       "rules": {
-        "max-lines": ["warn", { "max": 300, "skipBlankLines": true, "skipComments": true }],
-        "max-statements": ["warn", { "max": 10 }]
+        "max-lines": [
+          "warn",
+          {
+            "max": 300,
+            "skipBlankLines": true,
+            "skipComments": true
+          }
+        ],
+        "max-statements": [
+          "warn",
+          {
+            "max": 10
+          }
+        ],
+        "unicorn/filename-case": [
+          "error",
+          {
+            "cases": {
+              "pascalCase": true,
+              "camelCase": true
+            }
+          }
+        ]
       }
     },
     {
