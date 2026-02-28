@@ -40,6 +40,7 @@
     "typescript/no-unsafe-member-access": "error",
     "typescript/no-unsafe-return": "error",
     "typescript/no-non-null-assertion": "error",
+    "typescript/no-unsafe-type-assertion": "error",
     "typescript/no-unused-vars": [
       "error",
       {
@@ -81,7 +82,13 @@
 
     "oxc/no-async-await": "off",
     "oxc/no-optional-chaining": "off",
-    "oxc/no-rest-spread-properties": "off"
+    "oxc/no-rest-spread-properties": "off",
+
+    "complexity": ["warn", { "max": 10 }],
+    "max-lines-per-function": ["warn", { "max": 80, "skipBlankLines": true, "skipComments": true }],
+    "max-depth": ["warn", { "max": 4 }],
+    "max-nested-callbacks": ["warn", { "max": 3 }],
+    "no-useless-catch": "error"
   },
   "overrides": [
     {
@@ -91,6 +98,13 @@
       },
       "rules": {
         "no-console": "error"
+      }
+    },
+    {
+      "files": ["apps/web/**/*.{jsx,tsx}"],
+      "rules": {
+        "max-lines": ["warn", { "max": 300, "skipBlankLines": true, "skipComments": true }],
+        "max-statements": ["warn", { "max": 10 }]
       }
     },
     {
@@ -109,7 +123,9 @@
         "node": true
       },
       "rules": {
-        "no-magic-numbers": "off"
+        "no-magic-numbers": "off",
+        "max-lines-per-function": "off",
+        "max-lines": "off"
       }
     },
     {
