@@ -12,7 +12,7 @@
       "db": ["../../api/src/db/index.ts"],
       "db/*": ["../../api/src/db/*"],
       "logger": ["../../api/src/logger.ts"],
-      "settings": ["../settings.ts"],
+      "settings": ["./settings.ts"],
       "models/*": ["../../api/src/models/*"],
       "utils/*": ["../../api/src/utils/*"]
     }

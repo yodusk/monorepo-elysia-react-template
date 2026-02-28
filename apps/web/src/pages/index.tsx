@@ -22,7 +22,7 @@ function HomePage() {
       return <pre>{String(error)}</pre>
     case 'success':
       return (
-        <main style={{ fontFamily: 'system-ui', padding: 16 }}>
+        <main className="p-4 font-sans">
           <h1>Web</h1>
           <p>{data.message}</p>
         </main>
