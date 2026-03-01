@@ -1,9 +1,9 @@
-import { defineConfig, type PluginOption } from 'vite'
-import { fileURLToPath } from 'node:url'
-import path from 'node:path'
-import { tanstackRouter } from '@tanstack/router-plugin/vite'
 import tailwindcss from '@tailwindcss/vite'
+import { tanstackRouter } from '@tanstack/router-plugin/vite'
 import react from '@vitejs/plugin-react'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
+import { defineConfig, type PluginOption } from 'vite'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
@@ -11,10 +11,10 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 export default defineConfig({
   plugins: [
     tanstackRouter({
-      target: 'react',
       autoCodeSplitting: true,
-      routesDirectory: './src/pages',
       generatedRouteTree: './src/routeTree.gen.ts',
+      routesDirectory: './src/pages',
+      target: 'react',
     }) as PluginOption,
     tailwindcss() as PluginOption,
     react() as PluginOption,

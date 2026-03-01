@@ -1,9 +1,9 @@
-import { z } from 'zod'
 import { parseItemStrict } from '@commons'
+import { z } from 'zod'
 
 const envSchema = z.object({
-  NODE_ENV: z.enum(['development', 'production', 'test']),
   DATABASE_URL: z.url().startsWith('postgres://'),
+  NODE_ENV: z.enum(['development', 'production', 'test']),
 })
 
 const envVars = parseItemStrict(envSchema, Bun.env, false)

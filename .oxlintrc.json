@@ -9,15 +9,7 @@
     "restriction": "warn",
     "nursery": "warn"
   },
-  "plugins": [
-    "oxc",
-    "typescript",
-    "react",
-    "node",
-    "vitest",
-    "import",
-    "promise"
-  ],
+  "plugins": ["oxc", "typescript", "react", "node", "vitest", "import", "promise"],
   "env": {
     "es6": true
   },
@@ -166,10 +158,7 @@
     "react/jsx-filename-extension": [
       "error",
       {
-        "extensions": [
-          ".jsx",
-          ".tsx"
-        ]
+        "extensions": [".jsx", ".tsx"]
       }
     ],
     "react/jsx-key": "error",
@@ -186,9 +175,7 @@
     "import/no-unassigned-import": [
       "error",
       {
-        "allow": [
-          "**/*.css"
-        ]
+        "allow": ["**/*.css"]
       }
     ],
     "promise/no-return-in-finally": "error",
@@ -214,10 +201,7 @@
     "unicorn/prefer-array-index-of": "error",
     "unicorn/prefer-date-now": "error",
     "unicorn/prefer-default-parameters": "error",
-    "unicorn/prefer-ternary": [
-      "warn",
-      "only-single-line"
-    ],
+    "unicorn/prefer-ternary": ["warn", "only-single-line"],
     "unicorn/prefer-type-error": "error",
     "unicorn/throw-new-error": "error",
     "node/no-process-env": "off",
@@ -232,7 +216,7 @@
     "oxc/no-async-await": "off",
     "oxc/no-optional-chaining": "off",
     "oxc/no-rest-spread-properties": "off",
-    "curly": "error",
+    "curly": "off",
     "for-direction": "error",
     "getter-return": "error",
     "no-array-constructor": "error",
@@ -288,9 +272,7 @@
     "no-warning-comments": [
       "error",
       {
-        "terms": [
-          "@nocommit"
-        ]
+        "terms": ["@nocommit"]
       }
     ],
     "no-with": "error",
@@ -362,12 +344,7 @@
     "perfectionist/sort-interfaces": "error",
     "perfectionist/sort-jsx-props": "error",
     "perfectionist/sort-object-types": "error",
-    "perfectionist/sort-objects": [
-      "error",
-      {
-        "partitionByComment": true
-      }
-    ],
+    "perfectionist/sort-objects": "off",
     "react-hooks/exhaustive-deps": "error",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks-js/component-hook-factories": "error",
@@ -388,17 +365,13 @@
   },
   "overrides": [
     {
-      "files": [
-        "apps/web/**/*.{js,jsx,ts,tsx}"
-      ],
+      "files": ["apps/web/**/*.{js,jsx,ts,tsx}"],
       "env": {
         "browser": true
       }
     },
     {
-      "files": [
-        "apps/web/**/*.{jsx,tsx}"
-      ],
+      "files": ["apps/web/**/*.{jsx,tsx}"],
       "rules": {
         "max-lines": [
           "warn",
@@ -425,10 +398,7 @@
       }
     },
     {
-      "files": [
-        "apps/api/**/*.{js,ts}",
-        "packages/**/*.{js,ts}"
-      ],
+      "files": ["apps/api/**/*.{js,ts}", "packages/**/*.{js,ts}"],
       "env": {
         "node": true
       },
@@ -437,9 +407,7 @@
       }
     },
     {
-      "files": [
-        "**/*.{test,spec}.{js,jsx,ts,tsx}"
-      ],
+      "files": ["**/*.{test,spec}.{js,jsx,ts,tsx}"],
       "env": {
         "node": true
       },
@@ -449,9 +417,7 @@
       }
     },
     {
-      "files": [
-        "packages/migrations/src/run.ts"
-      ],
+      "files": ["packages/migrations/src/run.ts"],
       "rules": {
         "no-console": "off",
         "no-await-in-loop": "off"

@@ -1,19 +1,19 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { atomWithQuery } from 'jotai-tanstack-query'
 import { useAtomValue } from 'jotai'
+import { atomWithQuery } from 'jotai-tanstack-query'
 import { api } from '../api'
 
 const helloAtom = atomWithQuery(() => ({
-  queryKey: ['hello'],
   queryFn: async () => {
     const { data, error } = await api.hello.get()
     if (error) throw new Error(JSON.stringify(error))
     return data
   },
+  queryKey: ['hello'],
 }))
 
 function HomePage() {
-  const { data, status, error } = useAtomValue(helloAtom)
+  const { data, error, status } = useAtomValue(helloAtom)
 
   switch (status) {
     case 'pending':

@@ -3,11 +3,11 @@ import type { ReactNode } from 'react'
 export function resolveStatus<T>(
   result:
     | { status: 'pending' }
-    | { status: 'error'; error: Error }
-    | { status: 'success'; data: T },
+    | { error: Error; status: 'error' }
+    | { data: T; status: 'success' },
   resolver: {
-    pending: () => ReactNode
     error: (error: Error) => ReactNode
+    pending: () => ReactNode
     success: (data: T) => ReactNode
   },
 ): ReactNode {

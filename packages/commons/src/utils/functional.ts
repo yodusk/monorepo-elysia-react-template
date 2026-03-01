@@ -1,10 +1,10 @@
 export type Predicate<T> = (item: T) => boolean
 
-export function and<T>(...predicates: Predicate<T>[]): Predicate<T> {
+export function and<T>(...predicates: Array<Predicate<T>>): Predicate<T> {
   return (item: T) => predicates.every((predicate) => predicate(item))
 }
 
-export function or<T>(...predicates: Predicate<T>[]): Predicate<T> {
+export function or<T>(...predicates: Array<Predicate<T>>): Predicate<T> {
   return (item: T) => predicates.some((predicate) => predicate(item))
 }
 

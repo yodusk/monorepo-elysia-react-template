@@ -1,9 +1,9 @@
-import pino, { type Logger } from 'pino'
 import { AsyncLocalStorage } from 'node:async_hooks'
+import pino, { type Logger } from 'pino'
 
 export type RequestContext = {
-  requestId: string
   logger: Logger
+  requestId: string
   startTimeMs: number
 }
 
@@ -18,12 +18,12 @@ const baseLogger = isDev
         level: isTest ? 'silent' : (Bun.env.LOG_LEVEL ?? 'info'),
       },
       pino.transport({
-        target: 'pino-pretty',
         options: {
           colorize: true,
           translateTime: 'HH:MM:ss',
           ignore: 'pid,hostname',
         },
+        target: 'pino-pretty',
       }),
     )
   : pino({

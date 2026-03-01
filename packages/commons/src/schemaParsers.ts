@@ -51,7 +51,7 @@ export function snakeCaseToCamelCase(str: string): string {
 export function parseItems<T extends z.ZodType>(
   parser: T,
   items?: Record<string, unknown>[] | null,
-): z.output<T>[] {
+): Array<z.output<T>> {
   return (items ?? []).map((item) => parseItem(parser, item)).filter(isNotNull)
 }
 
@@ -82,7 +82,7 @@ export function parseItemStrict<T extends z.ZodType>(
 export function parseItemsStrict<T extends z.ZodType>(
   parser: T,
   items?: Record<string, unknown>[] | null,
-): z.output<T>[] {
+): Array<z.output<T>> {
   return (items ?? []).map((item) => parseItemStrict(parser, item))
 }
 
