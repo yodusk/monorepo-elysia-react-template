@@ -398,6 +398,19 @@
       }
     },
     {
+      "files": ["apps/api/src/controllers/**/*.{js,ts}"],
+      "rules": {
+        "max-lines-per-function": [
+          "error",
+          {
+            "max": 20,
+            "skipBlankLines": true,
+            "skipComments": true
+          }
+        ]
+      }
+    },
+    {
       "files": ["apps/api/**/*.{js,ts}", "packages/**/*.{js,ts}"],
       "env": {
         "node": true
