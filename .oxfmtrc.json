@@ -8,19 +8,9 @@
   "jsxSingleQuote": true,
   "trailingComma": "all",
   "endOfLine": "lf",
-  "ignorePatterns": [
-    "node_modules/**",
-    "**/dist/**",
-    "**/build/**",
-    "coverage/**"
-  ],
+  "ignorePatterns": ["node_modules/**", "**/dist/**", "**/build/**", "coverage/**"],
   "experimentalSortImports": {
     "newlinesBetween": false
   },
-  "experimentalSortPackageJson": {
-    "sortScripts": true
-  },
-  "experimentalTailwindcss": {
-    "stylesheet": "client/src/App.css"
-  }
+  "experimentalTailwindcss": {}
 }

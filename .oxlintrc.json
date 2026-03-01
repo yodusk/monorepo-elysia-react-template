@@ -316,7 +316,5 @@
       }
     }
   ],
-  "jsPlugins": [
-    "eslint-plugin-perfectionist"
-  ]
+  "jsPlugins": ["eslint-plugin-perfectionist"]
 }

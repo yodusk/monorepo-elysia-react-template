@@ -93,7 +93,5 @@
       }
     }
   ],
-  "jsPlugins": [
-    "eslint-plugin-boundaries"
-  ]
+  "jsPlugins": ["eslint-plugin-boundaries"]
 }

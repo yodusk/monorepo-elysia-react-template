@@ -1,6 +1,6 @@
-import { Client } from 'pg'
 import { readdir, readFile } from 'node:fs/promises'
 import { join, resolve } from 'node:path'
+import { Client } from 'pg'
 
 const MIGRATIONS_TABLE = '_migrations'
 const SQL_DIR = resolve(import.meta.dir, '../sql')
