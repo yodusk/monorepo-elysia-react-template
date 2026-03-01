@@ -9,14 +9,9 @@
     "restriction": "warn",
     "nursery": "warn"
   },
-  "plugins": ["oxc", "typescript", "react", "node", "vitest", "import", "promise"],
+  "plugins": ["oxc", "typescript", "import"],
   "env": {
     "es6": true
-  },
-  "settings": {
-    "vitest": {
-      "typecheck": true
-    }
   },
   "globals": {
     "Bun": "readonly"
@@ -154,33 +149,28 @@
       }
     ],
     "typescript/explicit-module-boundary-types": "off",
-    "react/forward-ref-uses-ref": "error",
-    "react/jsx-filename-extension": [
+    "typescript/array-type": [
       "error",
       {
-        "extensions": [".jsx", ".tsx"]
+        "default": "generic"
       }
     ],
-    "react/jsx-key": "error",
-    "react/jsx-no-duplicate-props": "error",
-    "react/no-array-index-key": "warn",
-    "react/no-unknown-property": "error",
-    "react/only-export-components": "error",
-    "react/rules-of-hooks": "error",
-    "react/react-in-jsx-scope": "off",
+    "typescript/no-duplicate-enum-values": "error",
+    "typescript/no-empty-object-type": "error",
+    "typescript/no-extra-non-null-assertion": "error",
+    "typescript/no-misused-new": "error",
+    "typescript/no-non-null-asserted-optional-chain": "error",
+    "typescript/no-unsafe-declaration-merging": "error",
+    "typescript/no-unsafe-function-type": "error",
+    "typescript/no-wrapper-object-types": "error",
+    "typescript/prefer-namespace-keyword": "error",
+    "typescript/triple-slash-reference": "error",
     "import/no-cycle": "error",
     "import/no-duplicates": "error",
     "import/no-relative-parent-imports": "error",
     "import/no-self-import": "error",
-    "import/no-unassigned-import": [
-      "error",
-      {
-        "allow": ["**/*.css"]
-      }
-    ],
-    "promise/no-return-in-finally": "error",
-    "promise/no-return-wrap": "error",
-    "promise/prefer-catch": "error",
+    "import/export": "error",
+    "import/no-namespace": "error",
     "unicorn/filename-case": [
       "error",
       {
@@ -204,14 +194,30 @@
     "unicorn/prefer-ternary": ["warn", "only-single-line"],
     "unicorn/prefer-type-error": "error",
     "unicorn/throw-new-error": "error",
-    "node/no-process-env": "off",
-    "node/no-missing-import": "off",
-    "node/no-unsupported-features": "warn",
-    "vitest/no-conditional-tests": "error",
-    "vitest/no-focused-tests": "error",
-    "vitest/no-identical-title": "error",
-    "vitest/no-unneeded-async-expect-function": "error",
-    "vitest/require-local-test-context-for-concurrent-snapshots": "error",
+    "unicorn/catch-error-name": "error",
+    "unicorn/consistent-empty-array-spread": "error",
+    "unicorn/consistent-function-scoping": "error",
+    "unicorn/no-abusive-eslint-disable": "error",
+    "unicorn/no-hex-escape": "error",
+    "unicorn/no-magic-array-flat-depth": "error",
+    "unicorn/no-typeof-undefined": "error",
+    "unicorn/no-useless-promise-resolve-reject": "error",
+    "unicorn/no-useless-spread": "error",
+    "unicorn/numeric-separators-style": "error",
+    "unicorn/prefer-array-some": "error",
+    "unicorn/prefer-at": "error",
+    "unicorn/prefer-dom-node-append": "error",
+    "unicorn/prefer-native-coercion-functions": "error",
+    "unicorn/prefer-node-protocol": "error",
+    "unicorn/prefer-number-properties": "error",
+    "unicorn/prefer-optional-catch-binding": "error",
+    "unicorn/prefer-set-size": "error",
+    "unicorn/prefer-string-raw": "error",
+    "unicorn/prefer-string-replace-all": "error",
+    "unicorn/prefer-string-slice": "error",
+    "unicorn/prefer-structured-clone": "error",
+    "unicorn/prefer-top-level-await": "error",
+    "unicorn/text-encoding-identifier-case": "error",
     "oxc/branches-sharing-code": "error",
     "oxc/no-async-await": "off",
     "oxc/no-optional-chaining": "off",
@@ -279,60 +285,6 @@
     "require-yield": "error",
     "use-isnan": "error",
     "valid-typeof": "error",
-    "typescript/array-type": [
-      "error",
-      {
-        "default": "generic"
-      }
-    ],
-    "typescript/no-duplicate-enum-values": "error",
-    "typescript/no-empty-object-type": "error",
-    "typescript/no-extra-non-null-assertion": "error",
-    "typescript/no-misused-new": "error",
-    "typescript/no-non-null-asserted-optional-chain": "error",
-    "typescript/no-unsafe-declaration-merging": "error",
-    "typescript/no-unsafe-function-type": "error",
-    "typescript/no-wrapper-object-types": "error",
-    "typescript/prefer-namespace-keyword": "error",
-    "typescript/triple-slash-reference": "error",
-    "react/jsx-no-comment-textnodes": "error",
-    "react/jsx-no-target-blank": "error",
-    "react/jsx-no-undef": "error",
-    "react/no-children-prop": "error",
-    "react/no-danger-with-children": "error",
-    "react/no-direct-mutation-state": "error",
-    "react/no-find-dom-node": "error",
-    "react/no-is-mounted": "error",
-    "react/no-render-return-value": "error",
-    "react/no-string-refs": "error",
-    "react/no-unescaped-entities": "error",
-    "react/require-render-return": "error",
-    "import/export": "error",
-    "import/no-namespace": "error",
-    "unicorn/catch-error-name": "error",
-    "unicorn/consistent-empty-array-spread": "error",
-    "unicorn/consistent-function-scoping": "error",
-    "unicorn/no-abusive-eslint-disable": "error",
-    "unicorn/no-hex-escape": "error",
-    "unicorn/no-magic-array-flat-depth": "error",
-    "unicorn/no-typeof-undefined": "error",
-    "unicorn/no-useless-promise-resolve-reject": "error",
-    "unicorn/no-useless-spread": "error",
-    "unicorn/numeric-separators-style": "error",
-    "unicorn/prefer-array-some": "error",
-    "unicorn/prefer-at": "error",
-    "unicorn/prefer-dom-node-append": "error",
-    "unicorn/prefer-native-coercion-functions": "error",
-    "unicorn/prefer-node-protocol": "error",
-    "unicorn/prefer-number-properties": "error",
-    "unicorn/prefer-optional-catch-binding": "error",
-    "unicorn/prefer-set-size": "error",
-    "unicorn/prefer-string-raw": "error",
-    "unicorn/prefer-string-replace-all": "error",
-    "unicorn/prefer-string-slice": "error",
-    "unicorn/prefer-structured-clone": "error",
-    "unicorn/prefer-top-level-await": "error",
-    "unicorn/text-encoding-identifier-case": "error",
     "perfectionist/sort-enums": [
       "error",
       {
@@ -344,89 +296,16 @@
     "perfectionist/sort-interfaces": "error",
     "perfectionist/sort-jsx-props": "error",
     "perfectionist/sort-object-types": "error",
-    "perfectionist/sort-objects": "off",
-    "react-hooks/exhaustive-deps": "error",
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks-js/component-hook-factories": "error",
-    "react-hooks-js/config": "error",
-    "react-hooks-js/error-boundaries": "error",
-    "react-hooks-js/gating": "error",
-    "react-hooks-js/globals": "error",
-    "react-hooks-js/immutability": "error",
-    "react-hooks-js/incompatible-library": "error",
-    "react-hooks-js/preserve-manual-memoization": "error",
-    "react-hooks-js/purity": "error",
-    "react-hooks-js/refs": "error",
-    "react-hooks-js/set-state-in-effect": "error",
-    "react-hooks-js/set-state-in-render": "error",
-    "react-hooks-js/static-components": "error",
-    "react-hooks-js/unsupported-syntax": "error",
-    "react-hooks-js/use-memo": "error"
+    "perfectionist/sort-objects": "off"
   },
   "overrides": [
     {
-      "files": ["apps/web/**/*.{js,jsx,ts,tsx}"],
-      "env": {
-        "browser": true
-      }
-    },
-    {
-      "files": ["apps/web/**/*.{jsx,tsx}"],
-      "rules": {
-        "max-lines": [
-          "warn",
-          {
-            "max": 300,
-            "skipBlankLines": true,
-            "skipComments": true
-          }
-        ],
-        "max-statements": [
-          "warn",
-          {
-            "max": 10
-          }
-        ],
-        "unicorn/filename-case": [
-          "error",
-          {
-            "cases": {
-              "pascalCase": true
-            }
-          }
-        ]
-      }
-    },
-    {
-      "files": ["apps/api/src/controllers/**/*.{js,ts}"],
-      "rules": {
-        "max-lines-per-function": [
-          "error",
-          {
-            "max": 20,
-            "skipBlankLines": true,
-            "skipComments": true
-          }
-        ]
-      }
-    },
-    {
-      "files": ["apps/api/**/*.{js,ts}", "packages/**/*.{js,ts}"],
+      "files": ["packages/**/*.{js,ts}"],
       "env": {
         "node": true
       },
       "rules": {
         "node/no-process-env": "error"
-      }
-    },
-    {
-      "files": ["**/*.{test,spec}.{js,jsx,ts,tsx}"],
-      "env": {
-        "node": true
-      },
-      "rules": {
-        "max-lines-per-function": "off",
-        "max-lines": "off"
       }
     },
     {
@@ -438,7 +317,6 @@
     }
   ],
   "jsPlugins": [
-    "eslint-plugin-perfectionist",
-    { "name": "react-hooks-js", "specifier": "eslint-plugin-react-hooks" }
+    "eslint-plugin-perfectionist"
   ]
 }

@@ -1,0 +1,134 @@
+{
+  "$schema": "../../node_modules/oxlint/configuration_schema.json",
+  "extends": ["../../.oxlintrc.json"],
+  "plugins": ["react"],
+  "env": {
+    "browser": true
+  },
+  "settings": {
+    "boundaries/elements": [
+      { "type": "pages", "pattern": "src/pages/*" },
+      { "type": "components", "pattern": "src/components/*" },
+      { "type": "data", "pattern": "src/data/*" },
+      { "type": "utils", "pattern": "src/utils/*" },
+      { "type": "api", "pattern": "src/api/*" },
+      { "type": "settings", "pattern": "src/settings*" }
+    ]
+  },
+  "rules": {
+    "react/forward-ref-uses-ref": "error",
+    "react/jsx-filename-extension": [
+      "error",
+      {
+        "extensions": [".jsx", ".tsx"]
+      }
+    ],
+    "react/jsx-key": "error",
+    "react/jsx-no-duplicate-props": "error",
+    "react/jsx-no-comment-textnodes": "error",
+    "react/jsx-no-target-blank": "error",
+    "react/jsx-no-undef": "error",
+    "react/no-array-index-key": "warn",
+    "react/no-unknown-property": "error",
+    "react/no-children-prop": "error",
+    "react/no-danger-with-children": "error",
+    "react/no-direct-mutation-state": "error",
+    "react/no-find-dom-node": "error",
+    "react/no-is-mounted": "error",
+    "react/no-render-return-value": "error",
+    "react/no-string-refs": "error",
+    "react/no-unescaped-entities": "error",
+    "react/require-render-return": "error",
+    "react/only-export-components": "error",
+    "react/rules-of-hooks": "error",
+    "react/react-in-jsx-scope": "off",
+    "react-hooks/exhaustive-deps": "error",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks-js/component-hook-factories": "error",
+    "react-hooks-js/config": "error",
+    "react-hooks-js/error-boundaries": "error",
+    "react-hooks-js/gating": "error",
+    "react-hooks-js/globals": "error",
+    "react-hooks-js/immutability": "error",
+    "react-hooks-js/incompatible-library": "error",
+    "react-hooks-js/preserve-manual-memoization": "error",
+    "react-hooks-js/purity": "error",
+    "react-hooks-js/refs": "error",
+    "react-hooks-js/set-state-in-effect": "error",
+    "react-hooks-js/set-state-in-render": "error",
+    "react-hooks-js/static-components": "error",
+    "react-hooks-js/unsupported-syntax": "error",
+    "react-hooks-js/use-memo": "error",
+    "import/no-unassigned-import": [
+      "error",
+      {
+        "allow": ["**/*.css"]
+      }
+    ],
+    "boundaries/element-types": [
+      "error",
+      {
+        "default": "disallow",
+        "rules": [
+          {
+            "from": "pages",
+            "allow": ["components", "data", "utils", "api", "settings"]
+          },
+          {
+            "from": "components",
+            "allow": ["data", "utils", "api", "settings"]
+          },
+          {
+            "from": "data",
+            "allow": ["api", "utils", "settings"]
+          },
+          {
+            "from": "utils",
+            "allow": []
+          },
+          {
+            "from": "api",
+            "allow": ["settings"]
+          },
+          {
+            "from": "settings",
+            "allow": []
+          }
+        ]
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["**/*.{jsx,tsx}"],
+      "rules": {
+        "max-lines": [
+          "warn",
+          {
+            "max": 300,
+            "skipBlankLines": true,
+            "skipComments": true
+          }
+        ],
+        "max-statements": [
+          "warn",
+          {
+            "max": 10
+          }
+        ],
+        "unicorn/filename-case": [
+          "error",
+          {
+            "cases": {
+              "pascalCase": true
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "jsPlugins": [
+    { "name": "react-hooks-js", "specifier": "eslint-plugin-react-hooks" },
+    "eslint-plugin-boundaries"
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "$schema": "../../node_modules/oxlint/configuration_schema.json",
+  "extends": ["../../.oxlintrc.json"],
+  "plugins": ["node", "vitest", "promise"],
+  "env": {
+    "node": true
+  },
+  "globals": {
+    "Bun": "readonly"
+  },
+  "settings": {
+    "vitest": {
+      "typecheck": true
+    },
+    "boundaries/elements": [
+      { "type": "controllers", "pattern": "src/controllers/*" },
+      { "type": "useCases", "pattern": "src/useCases/*" },
+      { "type": "repositories", "pattern": "src/repositories/*" },
+      { "type": "models", "pattern": "src/models/*" },
+      { "type": "clients", "pattern": "src/clients/*" },
+      { "type": "utils", "pattern": "src/utils/*" },
+      { "type": "settings", "pattern": "src/settings*" }
+    ]
+  },
+  "rules": {
+    "node/no-process-env": "error",
+    "node/no-missing-import": "off",
+    "node/no-unsupported-features": "warn",
+    "promise/no-return-in-finally": "error",
+    "promise/no-return-wrap": "error",
+    "promise/prefer-catch": "error",
+    "vitest/no-conditional-tests": "error",
+    "vitest/no-focused-tests": "error",
+    "vitest/no-identical-title": "error",
+    "vitest/no-unneeded-async-expect-function": "error",
+    "vitest/require-local-test-context-for-concurrent-snapshots": "error",
+    "boundaries/element-types": [
+      "error",
+      {
+        "default": "disallow",
+        "rules": [
+          {
+            "from": "controllers",
+            "allow": ["useCases", "models", "settings", "utils"]
+          },
+          {
+            "from": "useCases",
+            "allow": ["repositories", "clients", "models", "utils", "settings"]
+          },
+          {
+            "from": "repositories",
+            "allow": ["models", "utils", "settings"]
+          },
+          {
+            "from": "clients",
+            "allow": ["models", "utils", "settings"]
+          },
+          {
+            "from": "models",
+            "allow": ["utils"]
+          },
+          {
+            "from": "utils",
+            "allow": []
+          },
+          {
+            "from": "settings",
+            "allow": ["utils"]
+          }
+        ]
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["src/controllers/**/*.{js,ts}"],
+      "rules": {
+        "max-lines-per-function": [
+          "error",
+          {
+            "max": 20,
+            "skipBlankLines": true,
+            "skipComments": true
+          }
+        ]
+      }
+    },
+    {
+      "files": ["**/*.{test,spec}.{js,jsx,ts,tsx}"],
+      "rules": {
+        "max-lines-per-function": "off",
+        "max-lines": "off"
+      }
+    }
+  ],
+  "jsPlugins": [
+    "eslint-plugin-boundaries"
+  ]
+}
